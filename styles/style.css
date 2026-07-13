@@ -818,6 +818,14 @@ ul {
     transition: none !important;
     scroll-behavior: auto !important;
   }
+  @media screen and (max-width: 720px) {
+    .about {
+      background-color: #111114;
+    }
+    .hero {
+      background-color: #111114;
+    }
+  }
 }
 /* Feedback global del formulario (versión vanilla) */
 .form-feedback {
