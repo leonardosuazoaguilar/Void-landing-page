@@ -822,9 +822,11 @@ ul {
 @media screen and (max-width: 900px) {
   .about {
     background-color: #111114;
+    background-image: none;
   }
   .hero {
     background-color: #111114;
+    background-image: none;
   }
 }
 /* Feedback global del formulario (versión vanilla) */
