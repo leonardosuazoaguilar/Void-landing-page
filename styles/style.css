@@ -28,11 +28,12 @@
 
   --void-container: 1180px;
   --void-gutter: 1.25rem;
-
   --void-header-h: 68px;
 }
 
-/* ---------- Reset / base ---------- */
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
 *,
 *::before,
 *::after {
@@ -78,6 +79,7 @@ a {
   text-decoration: none;
   transition: color 0.2s ease;
 }
+
 a:hover {
   color: var(--void-accent);
 }
@@ -111,7 +113,9 @@ ul {
   border-radius: 4px;
 }
 
-/* ---------- Layout helpers ---------- */
+/* ==========================================================================
+   LAYOUT HELPERS & COMPONENTS
+   ========================================================================== */
 .container {
   width: 100%;
   max-width: var(--void-container);
@@ -162,25 +166,25 @@ ul {
   transform: translateY(-2px);
   color: #fff;
 }
+
 .btn:active {
   transform: translateY(0);
 }
 
-.btn-primary {
-  background: var(--void-accent);
-  color: #fff;
-  box-shadow: var(--void-shadow-accent);
-}
-.btn-primary:hover {
-  background: var(--void-accent-hover);
-  color: #26262c;
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
 
+.btn-primary,
 .btn-secondary {
   background: var(--void-accent);
   color: #fff;
   box-shadow: var(--void-shadow-accent);
 }
+
+.btn-primary:hover,
 .btn-secondary:hover {
   background: var(--void-accent-hover);
   color: #26262c;
@@ -190,6 +194,7 @@ ul {
   background: var(--void-whatsapp);
   color: #05130a;
 }
+
 .btn-whatsapp:hover {
   background: var(--void-whatsapp-hover);
   color: #05130a;
@@ -198,6 +203,17 @@ ul {
 .btn-large {
   padding: 1.05rem 2.1rem;
   font-size: 1rem;
+}
+
+/* ==========================================================================
+   SECTIONS & SPECIFIC COMPONENTS
+   ========================================================================== */
+.categories,
+.about,
+.testimonials,
+.cta-section,
+.contact {
+  padding: 4.5rem 0;
 }
 
 /* ---------- Header / Navegación ---------- */
@@ -225,6 +241,7 @@ ul {
   letter-spacing: 0.08em;
   color: var(--void-text);
 }
+
 .logo:hover {
   color: var(--void-accent);
 }
@@ -242,6 +259,7 @@ ul {
   border-radius: var(--void-radius-sm);
   cursor: pointer;
 }
+
 .hamburger-line {
   display: block;
   height: 2px;
@@ -256,9 +274,11 @@ ul {
 .nav-toggle.is-open .hamburger-line:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
+
 .nav-toggle.is-open .hamburger-line:nth-child(2) {
   opacity: 0;
 }
+
 .nav-toggle.is-open .hamburger-line:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
@@ -274,6 +294,7 @@ ul {
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
+
 .main-nav.is-open {
   max-height: 60vh;
 }
@@ -283,6 +304,7 @@ ul {
   flex-direction: column;
   padding: 0.5rem var(--void-gutter) 1rem;
 }
+
 .nav-list li a {
   display: block;
   padding: 0.9rem 0.25rem;
@@ -292,6 +314,7 @@ ul {
   text-transform: uppercase;
   font-size: 0.9rem;
 }
+
 .nav-list li:last-child a {
   border-bottom: none;
 }
@@ -345,25 +368,12 @@ ul {
   gap: 0.75rem;
 }
 
-/* ---------- Secciones genéricas ---------- */
-.categories,
-.about,
-.testimonials,
-.cta-section,
-.contact {
-  padding: 4.5rem 0;
-}
-
+/* ---------- Categorías ---------- */
 .categories {
   background: var(--void-surface);
   border-block: 1px solid var(--void-border);
 }
-.testimonials {
-  background: var(--void-surface);
-  border-block: 1px solid var(--void-border);
-}
 
-/* ---------- Cards / Categorías ---------- */
 .cards-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -380,30 +390,31 @@ ul {
     border-color 0.2s ease,
     box-shadow 0.2s ease;
 }
+
 .value-card:hover {
   transform: translateY(-4px);
   border-color: var(--void-accent);
   box-shadow: var(--void-shadow);
 }
+
 .value-card-title {
   font-size: 1.6rem;
   color: var(--void-accent);
   margin-bottom: 0.5rem;
 }
+
 .value-card-text {
   color: var(--void-muted);
   margin: 0;
 }
 
-/* ---------- Sobre nosotros ---------- */
+/* ---------- Sobre nosotros & Patrocinadores ---------- */
 .about {
   background-image: url(/images/IMG_5280.JPG);
   background-repeat: no-repeat;
   background-size: cover;
 }
-.about-text {
-  color: #f4f4f5;
-}
+
 .about-inner {
   display: grid;
   grid-template-columns: 1fr;
@@ -411,9 +422,11 @@ ul {
   align-items: start;
 }
 
-.about-copy p {
+.about-copy p,
+.about-text {
   color: var(--void-text);
 }
+
 .about-copy .section-title {
   text-align: left;
 }
@@ -422,13 +435,14 @@ ul {
   margin-top: 1.5rem;
   display: grid;
   gap: 0.6rem;
-  list-style: none;
 }
+
 .about-list li {
   position: relative;
   padding-left: 1.5rem;
   color: var(--void-text);
 }
+
 .about-list li::before {
   content: "";
   position: absolute;
@@ -446,16 +460,19 @@ ul {
   border-radius: var(--void-radius);
   padding: 1.75rem;
 }
+
 .sponsors-title {
   font-size: 1.2rem;
   color: var(--void-text);
   margin-bottom: 1rem;
 }
+
 .sponsors-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 0.9rem;
 }
+
 .sponsor-card {
   display: flex;
   flex-direction: column;
@@ -465,23 +482,31 @@ ul {
   border: 1px solid var(--void-border);
   border-radius: var(--void-radius-sm);
 }
+
 .sponsor-card strong {
   font-family: var(--void-font-display);
   letter-spacing: 0.04em;
   color: var(--void-text);
   font-size: 1.05rem;
 }
+
 .sponsor-card span {
   color: var(--void-muted);
   font-size: 0.9rem;
 }
 
 /* ---------- Testimonios ---------- */
+.testimonials {
+  background: var(--void-surface);
+  border-block: 1px solid var(--void-border);
+}
+
 .testimonials-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.25rem;
 }
+
 .testimonial-card {
   margin: 0;
   background: var(--void-surface-2);
@@ -490,20 +515,23 @@ ul {
   border-radius: var(--void-radius);
   padding: 1.6rem;
 }
+
 .testimonial-card p {
   color: var(--void-text);
   font-style: italic;
   margin-bottom: 1rem;
 }
+
 .testimonial-card footer {
   color: var(--void-muted);
   font-size: 0.9rem;
 }
+
 .testimonial-card cite {
   font-style: normal;
 }
 
-/* ---------- CTA intermedia ---------- */
+/* ---------- CTA Intermedia ---------- */
 .cta-section {
   background:
     linear-gradient(
@@ -515,20 +543,23 @@ ul {
   border-block: 1px solid var(--void-border);
   text-align: center;
 }
+
 .cta-content {
   max-width: 720px;
   margin: 0 auto;
 }
+
 .cta-title {
   font-size: clamp(1.8rem, 4vw + 1rem, 2.75rem);
   color: var(--void-text);
 }
+
 .cta-text {
   color: var(--void-muted);
   margin-bottom: 1.75rem;
 }
 
-/* ---------- Contacto ---------- */
+/* ---------- Contacto & Formulario ---------- */
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -543,10 +574,12 @@ ul {
   display: grid;
   gap: 1rem;
 }
+
 .form-group {
   display: grid;
   gap: 0.4rem;
 }
+
 .form-group label {
   font-size: 0.85rem;
   font-weight: 600;
@@ -554,6 +587,7 @@ ul {
   text-transform: uppercase;
   color: var(--void-muted);
 }
+
 .form-group input,
 .form-group textarea {
   width: 100%;
@@ -567,32 +601,22 @@ ul {
     border-color 0.2s ease,
     box-shadow 0.2s ease;
 }
+
 .form-group input::placeholder,
 .form-group textarea::placeholder {
   color: #6b6b74;
 }
+
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
   border-color: var(--void-accent);
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
 }
+
 .form-group textarea {
   resize: vertical;
   min-height: 130px;
-}
-
-.form-success {
-  margin: 0;
-  font-size: 0.9rem;
-  color: var(--void-whatsapp);
-}
-
-.form-error {
-  display: block;
-  margin-top: 0.35rem;
-  font-size: 0.85rem;
-  color: var(--void-accent);
 }
 
 .form-group input[aria-invalid="true"],
@@ -601,10 +625,26 @@ ul {
   box-shadow: 0 0 0 3px rgba(225, 29, 46, 0.2);
 }
 
-.btn:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-  transform: none;
+.form-success,
+.form-feedback[data-type="success"] {
+  color: var(--void-whatsapp);
+}
+
+.form-error,
+.form-feedback[data-type="error"] {
+  color: var(--void-accent);
+}
+
+.form-error {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.85rem;
+}
+
+.form-feedback {
+  margin: 0;
+  font-size: 0.9rem;
+  min-height: 1.2em;
 }
 
 .contact-aside {
@@ -616,10 +656,12 @@ ul {
   flex-direction: column;
   gap: 1rem;
 }
+
 .contact-aside-title {
   font-size: 1.3rem;
   color: var(--void-text);
 }
+
 .contact-aside .btn-whatsapp {
   align-self: flex-start;
 }
@@ -632,13 +674,16 @@ ul {
   color: var(--void-muted);
   font-size: 0.95rem;
 }
+
 .contact-info p {
   margin: 0.35rem 0;
   color: var(--void-muted);
 }
+
 .contact-info strong {
   color: var(--void-text);
 }
+
 .contact-info a {
   color: var(--void-accent);
 }
@@ -649,24 +694,28 @@ ul {
   border-top: 1px solid var(--void-border);
   padding: 2.5rem 0 1.5rem;
 }
+
 .footer-inner {
   display: grid;
   grid-template-columns: 1fr;
   gap: 1.5rem;
   text-align: center;
 }
+
 .footer-brand {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.25rem;
 }
+
 .footer-logo {
   font-family: var(--void-font-display);
   font-size: 1.75rem;
   letter-spacing: 0.08em;
   color: var(--void-text);
 }
+
 .footer-tagline {
   margin: 0;
   font-size: 0.85rem;
@@ -681,12 +730,14 @@ ul {
   justify-content: center;
   gap: 0.5rem 1.25rem;
 }
+
 .footer-nav a {
   font-size: 0.9rem;
   color: var(--void-muted);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
+
 .footer-nav a:hover {
   color: var(--void-accent);
 }
@@ -696,6 +747,7 @@ ul {
   justify-content: center;
   gap: 1rem;
 }
+
 .footer-social a {
   padding: 0.5rem 1rem;
   border: 1px solid var(--void-border);
@@ -703,6 +755,7 @@ ul {
   font-size: 0.85rem;
   color: var(--void-text);
 }
+
 .footer-social a:hover {
   border-color: var(--void-accent);
   color: var(--void-accent);
@@ -715,17 +768,22 @@ ul {
 }
 
 /* ==========================================================================
-   Breakpoints
+   MEDIA QUERIES & BREAKPOINTS
    ========================================================================== */
 
-/* Tablet ≥ 640px */
+/* Mobile / Tablet Fallback (< 900px) */
+@media screen and (max-width: 900px) {
+  .hero,
+  .about {
+    background-color: #111114;
+    background-image: none;
+  }
+}
+
+/* Tablet (≥ 640px) */
 @media (min-width: 640px) {
-  .cards-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .sponsors-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .cards-grid,
+  .sponsors-grid,
   .testimonials-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -734,7 +792,7 @@ ul {
   }
 }
 
-/* Desktop ≥ 900px */
+/* Desktop (≥ 900px) */
 @media (min-width: 900px) {
   :root {
     --void-gutter: 2rem;
@@ -751,17 +809,20 @@ ul {
     border-bottom: none;
     overflow: visible;
   }
+
   .nav-list {
     flex-direction: row;
     align-items: center;
     gap: 2rem;
     padding: 0;
   }
+
   .nav-list li a {
     padding: 0.5rem 0;
     border-bottom: none;
     position: relative;
   }
+
   .nav-list li a::after {
     content: "";
     position: absolute;
@@ -772,13 +833,12 @@ ul {
     background: var(--void-accent);
     transition: width 0.2s ease;
   }
+
   .nav-list li a:hover::after {
     width: 100%;
   }
 
-  .cards-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  .cards-grid,
   .testimonials-grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -797,12 +857,15 @@ ul {
     align-items: center;
     text-align: left;
   }
+
   .footer-brand {
     align-items: flex-start;
   }
+
   .footer-social {
     justify-content: flex-end;
   }
+
   .footer-copyright {
     grid-column: 1 / -1;
     text-align: center;
@@ -811,33 +874,11 @@ ul {
   }
 }
 
-/* Reduced motion */
+/* Accesibilidad: Reducción de movimiento */
 @media (prefers-reduced-motion: reduce) {
   * {
     animation: none !important;
     transition: none !important;
     scroll-behavior: auto !important;
   }
-}
-@media screen and (max-width: 900px) {
-  .about {
-    background-color: #111114;
-    background-image: none;
-  }
-  .hero {
-    background-color: #111114;
-    background-image: none;
-  }
-}
-/* Feedback global del formulario (versión vanilla) */
-.form-feedback {
-  margin: 0;
-  font-size: 0.9rem;
-  min-height: 1.2em;
-}
-.form-feedback[data-type="success"] {
-  color: var(--void-whatsapp);
-}
-.form-feedback[data-type="error"] {
-  color: var(--void-accent);
 }
