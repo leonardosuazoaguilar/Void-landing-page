@@ -1,8 +1,8 @@
 @font-face {
   font-family: "Lovelo";
   src:
-    url("/fonts/Lovelo-LineLight.woff2") format("woff2"),
-    url("/fonts/Lovelo-LineLight.woff") format("woff");
+    url("../fonts/Lovelo-LineLight.woff2") format("woff2"),
+    url("../fonts/Lovelo-LineLight.woff") format("woff");
 }
 
 :root {
