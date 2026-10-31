@@ -30,11 +30,16 @@ sitios a la vez.
   botón principal.
 - **Elemento firma:** el símbolo Ø gira en 3D con el scroll (scroll-driven animations, con
   IntersectionObserver como respaldo) y las tarjetas de categorías se inclinan con el cursor.
+- **Personalidad (de @voidflagqro):** `css/personalidad.css` reúne lo propio de VØID: logo de neón que
+  se enciende, grano de película en el hero, marquesinas tipo póster en Montserrat 900 itálica,
+  números de jersey en las categorías y el póster del AcaBowl 2027.
 - **Adaptación al estándar de restaurantes:** "Menú" y "Reservas" se traducen en categorías del equipo y
   en "Únete por WhatsApp"; el schema usa `SportsTeam` en lugar de `Restaurant`. No hay `menu.html`.
 
 ## Pendientes antes de publicar
 
+- [ ] Retirar o actualizar la sección del AcaBowl después del 31 de enero de 2027.
+- [ ] Fotos de acción de los partidos (las del Instagram) con permiso del fotógrafo.
 - [ ] Dirección exacta de la sede de entrenamiento (enlace "Cómo llegar", mapa diferido y schema).
 - [ ] Días y horarios de entrenamiento por rama.
 - [ ] Dominio final en Cloudflare Pages: actualizar `canonical`, `og:url`, `sitemap.xml`, `robots.txt` y el schema.

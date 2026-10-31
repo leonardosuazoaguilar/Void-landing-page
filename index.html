@@ -30,6 +30,7 @@
     <link rel="preload" href="fonts/montserrat-latin-800.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="css/tokens.css" />
     <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/personalidad.css" />
     <script>
       document.documentElement.classList.replace("sin-js", "js");
     </script>
@@ -65,7 +66,24 @@
           { "@type": "Organization", "name": "Flamingo Store", "sameAs": "https://www.instagram.com/la_flamingo_store/" },
           { "@type": "Organization", "name": "Yuma Equipment", "sameAs": "https://www.instagram.com/yuma_equipment/" },
           { "@type": "Organization", "name": "Rosendahl Nextrom" }
-        ]
+        ],
+        "event": {
+          "@type": "SportsEvent",
+          "name": "AcaBowl 2027 Internacional",
+          "startDate": "2027-01-30",
+          "endDate": "2027-01-31",
+          "eventStatus": "https://schema.org/EventScheduled",
+          "location": {
+            "@type": "Place",
+            "name": "Acapulco",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Acapulco",
+              "addressRegion": "Gro.",
+              "addressCountry": "MX"
+            }
+          }
+        }
       }
     </script>
   </head>
@@ -118,7 +136,7 @@
           />
         </picture>
         <div class="contenedor">
-          <p class="antetitulo">Into the VOID</p>
+          <p class="antetitulo antetitulo--neon">Into the VØID · Qro. MX</p>
           <h1 id="titulo-principal" class="hero__titulo">
             <img class="hero__logo" src="img/void-nombre.svg" alt="VØID" width="1293" height="408" />
             <span class="hero__subtitulo">Flag football en Querétaro</span>
@@ -140,6 +158,25 @@
         </div>
       </section>
 
+      <div class="marquesina" aria-hidden="true">
+        <div class="marquesina__banda">
+          <div class="marquesina__pista">
+            <p class="marquesina__grupo">
+              <span>Varonil</span><img class="marquesina__simbolo" src="img/void-simbolo.svg" alt="" width="388" height="408" />
+              <span class="marquesina__hueco">Mixto</span><img class="marquesina__simbolo" src="img/void-simbolo.svg" alt="" width="388" height="408" />
+              <span>Femenil</span><img class="marquesina__simbolo" src="img/void-simbolo.svg" alt="" width="388" height="408" />
+              <span class="marquesina__hueco">Into the VØID</span><img class="marquesina__simbolo" src="img/void-simbolo.svg" alt="" width="388" height="408" />
+            </p>
+            <p class="marquesina__grupo">
+              <span>Varonil</span><img class="marquesina__simbolo" src="img/void-simbolo.svg" alt="" width="388" height="408" />
+              <span class="marquesina__hueco">Mixto</span><img class="marquesina__simbolo" src="img/void-simbolo.svg" alt="" width="388" height="408" />
+              <span>Femenil</span><img class="marquesina__simbolo" src="img/void-simbolo.svg" alt="" width="388" height="408" />
+              <span class="marquesina__hueco">Into the VØID</span><img class="marquesina__simbolo" src="img/void-simbolo.svg" alt="" width="388" height="408" />
+            </p>
+          </div>
+        </div>
+      </div>
+
       <section id="categorias" class="seccion" aria-labelledby="titulo-categorias">
         <div class="contenedor">
           <header class="seccion__encabezado" data-revelar>
@@ -149,6 +186,7 @@
           </header>
           <div class="tarjetas">
             <article class="tarjeta" data-revelar data-inclinar>
+              <span class="tarjeta__numero" aria-hidden="true">01</span>
               <img class="tarjeta__marca" src="img/void-simbolo.svg" alt="" width="388" height="408" />
               <h3>Varonil</h3>
               <p>
@@ -157,19 +195,21 @@
               </p>
             </article>
             <article class="tarjeta" data-revelar data-inclinar>
-              <img class="tarjeta__marca" src="img/void-simbolo.svg" alt="" width="388" height="408" />
-              <h3>Femenil</h3>
-              <p>
-                Técnica, trabajo en equipo y competitividad para destacar en ligas y torneos
-                locales y nacionales.
-              </p>
-            </article>
-            <article class="tarjeta" data-revelar data-inclinar>
+              <span class="tarjeta__numero" aria-hidden="true">02</span>
               <img class="tarjeta__marca" src="img/void-simbolo.svg" alt="" width="388" height="408" />
               <h3>Mixto</h3>
               <p>
                 Hombres y mujeres comparten el campo y fortalecen la comunicación y la dinámica de
                 equipo.
+              </p>
+            </article>
+            <article class="tarjeta" data-revelar data-inclinar>
+              <span class="tarjeta__numero" aria-hidden="true">03</span>
+              <img class="tarjeta__marca" src="img/void-simbolo.svg" alt="" width="388" height="408" />
+              <h3>Femenil</h3>
+              <p>
+                Técnica, trabajo en equipo y competitividad para destacar en ligas y torneos
+                locales y nacionales.
               </p>
             </article>
           </div>
@@ -218,6 +258,47 @@
             </picture>
             <img class="nosotros__simbolo" src="img/void-simbolo.svg" alt="" width="388" height="408" />
           </div>
+        </div>
+      </section>
+
+      <!-- PENDIENTE: retirar o actualizar esta sección después del 31 de enero de 2027 -->
+      <section id="torneo" class="seccion" aria-labelledby="titulo-torneo">
+        <div class="contenedor">
+          <article class="torneo" data-revelar>
+            <img class="torneo__simbolo" src="img/void-simbolo.svg" alt="" width="388" height="408" loading="lazy" />
+            <p class="torneo__etiqueta">Próximo torneo · Pocos lugares</p>
+            <h2 id="titulo-torneo" class="torneo__titulo">
+              AcaBowl 2027
+              <span>Internacional</span>
+            </h2>
+            <p>Aún estás a tiempo de ir al AcaBowl con VØID.</p>
+            <dl class="torneo__datos">
+              <div>
+                <dt>Días</dt>
+                <dd>30 y 31 de enero</dd>
+              </div>
+              <div>
+                <dt>Sede</dt>
+                <dd>Acapulco, Guerrero</dd>
+              </div>
+              <div>
+                <dt>Modalidades</dt>
+                <dd>Femenil y varonil</dd>
+              </div>
+            </dl>
+            <div class="hero__acciones">
+              <a
+                class="boton boton--principal"
+                href="https://wa.me/524426491624?text=Hola%20V%C3%98ID%2C%20quiero%20informes%20para%20ir%20al%20AcaBowl%202027."
+                data-evento="torneo"
+              >
+                Quiero ir al AcaBowl
+              </a>
+              <a class="boton boton--secundario" href="https://ig.me/m/voidflagqro" rel="noopener">
+                Pedir informes por DM
+              </a>
+            </div>
+          </article>
         </div>
       </section>
 
@@ -384,6 +465,23 @@
           </p>
         </div>
       </section>
+
+      <div class="marquesina marquesina--inversa" aria-hidden="true">
+        <div class="marquesina__banda">
+          <div class="marquesina__pista">
+            <p class="marquesina__grupo">
+              <span class="marquesina__hueco">Into the VØID</span><img class="marquesina__simbolo" src="img/void-simbolo.svg" alt="" width="388" height="408" />
+              <span>Qro. MX</span><img class="marquesina__simbolo" src="img/void-simbolo.svg" alt="" width="388" height="408" />
+              <span class="marquesina__hueco">Flag football</span><img class="marquesina__simbolo" src="img/void-simbolo.svg" alt="" width="388" height="408" />
+            </p>
+            <p class="marquesina__grupo">
+              <span class="marquesina__hueco">Into the VØID</span><img class="marquesina__simbolo" src="img/void-simbolo.svg" alt="" width="388" height="408" />
+              <span>Qro. MX</span><img class="marquesina__simbolo" src="img/void-simbolo.svg" alt="" width="388" height="408" />
+              <span class="marquesina__hueco">Flag football</span><img class="marquesina__simbolo" src="img/void-simbolo.svg" alt="" width="388" height="408" />
+            </p>
+          </div>
+        </div>
+      </div>
 
       <section id="contacto" class="seccion contacto" aria-labelledby="titulo-contacto">
         <div class="contenedor" data-revelar>

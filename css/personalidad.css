@@ -1,0 +1,291 @@
+/* ==========================================================================
+   Personalidad de VØID (solo este cliente), tomada de su Instagram @voidflagqro:
+   negro profundo, logo blanco con brillo neón, pósters en itálica pesada.
+   Solo usa variables de css/tokens.css; anima únicamente transform y opacity.
+   ========================================================================== */
+
+/* ---------- Hero: grano de película y logo de neón que se enciende ---------- */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: var(--textura-grano);
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.hero__titulo {
+  position: relative;
+}
+
+.hero__logo {
+  position: relative;
+}
+
+/* Halo de neón detrás del logo */
+.hero__titulo::before {
+  content: "";
+  position: absolute;
+  top: -15%;
+  left: -10%;
+  z-index: -1;
+  width: clamp(16rem, 10rem + 30vw, 42rem);
+  aspect-ratio: 3 / 1;
+  background: radial-gradient(closest-side, var(--color-neon-halo), transparent);
+  pointer-events: none;
+}
+
+.antetitulo--neon {
+  color: var(--color-texto);
+  text-shadow: var(--sombra-neon);
+}
+
+@keyframes encender-neon {
+  0%,
+  8% {
+    opacity: 0.08;
+  }
+  10% {
+    opacity: 0.9;
+  }
+  13% {
+    opacity: 0.15;
+  }
+  17% {
+    opacity: 1;
+  }
+  21% {
+    opacity: 0.35;
+  }
+  30%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes respirar-halo {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ---------- Marquesina tipo póster ---------- */
+.marquesina {
+  overflow: hidden;
+  padding-block: var(--espacio-2);
+  background: var(--color-fondo);
+}
+
+.marquesina__banda {
+  width: 110%;
+  margin-left: -5%;
+  padding-block: 0.6rem;
+  background: var(--color-marca);
+  color: var(--color-acento-texto);
+  transform: rotate(-2deg);
+}
+
+.marquesina--inversa .marquesina__banda {
+  background: transparent;
+  color: var(--color-texto);
+  border-block: 1px solid var(--color-borde);
+  transform: rotate(1.5deg);
+}
+
+.marquesina__pista {
+  display: flex;
+  width: max-content;
+}
+
+.marquesina__grupo {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: none;
+  margin: 0;
+  padding-right: 1.5rem;
+  font-family: var(--fuente-titulos);
+  font-weight: var(--peso-poster);
+  font-style: italic;
+  font-size: clamp(1.5rem, 1rem + 2.5vw, 3.5rem);
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.marquesina__hueco {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-acento-texto);
+}
+
+.marquesina--inversa .marquesina__hueco {
+  -webkit-text-stroke-color: var(--color-texto);
+}
+
+.marquesina__simbolo {
+  width: 0.9em;
+  height: auto;
+}
+
+.marquesina:not(.marquesina--inversa) .marquesina__simbolo {
+  filter: invert(1);
+}
+
+@keyframes desplazar {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes desplazar-inversa {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+/* ---------- Categorías: números de jersey ---------- */
+.tarjeta {
+  overflow: hidden;
+}
+
+.tarjeta__numero {
+  position: absolute;
+  top: -0.15em;
+  right: 0.1em;
+  font-family: var(--fuente-titulos);
+  font-weight: var(--peso-poster);
+  font-style: italic;
+  font-size: clamp(5rem, 4rem + 4vw, 8rem);
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color-texto-suave);
+  opacity: 0.35;
+  pointer-events: none;
+  transform: translateZ(1rem);
+}
+
+/* ---------- Póster del próximo torneo ---------- */
+.torneo {
+  position: relative;
+  display: grid;
+  gap: var(--espacio-3);
+  padding: var(--espacio-4) var(--espacio-3);
+  background: var(--color-superficie);
+  border: 1px solid var(--color-marca);
+  border-radius: var(--radio);
+  box-shadow:
+    0 0 1.5rem -0.25rem var(--color-marca-brillo),
+    inset 0 0 2rem -1rem var(--color-marca-brillo);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.torneo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: var(--textura-grano);
+  opacity: 0.06;
+}
+
+.torneo__simbolo {
+  position: absolute;
+  right: -3rem;
+  bottom: -3rem;
+  z-index: -1;
+  width: clamp(12rem, 8rem + 18vw, 26rem);
+  height: auto;
+  opacity: 0.08;
+}
+
+.torneo__etiqueta {
+  justify-self: start;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid var(--color-marca);
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: var(--peso-fuerte);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  box-shadow: 0 0 0.75rem -0.25rem var(--color-marca-brillo);
+}
+
+.torneo__titulo {
+  margin: 0;
+  font-weight: var(--peso-poster);
+  font-style: italic;
+  font-size: clamp(2.75rem, 1.5rem + 7vw, 7rem);
+  line-height: 0.9;
+  text-shadow: var(--sombra-neon);
+}
+
+.torneo__titulo span {
+  display: block;
+  font-size: 0.32em;
+  letter-spacing: 0.12em;
+  text-shadow: none;
+}
+
+.torneo__datos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: var(--espacio-2);
+  margin: 0;
+}
+
+.torneo__datos div {
+  padding-left: 1rem;
+  border-left: 3px solid var(--color-marca);
+}
+
+.torneo__datos dt {
+  font-size: 0.8125rem;
+  font-weight: var(--peso-fuerte);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-texto-suave);
+}
+
+.torneo__datos dd {
+  margin: 0.25rem 0 0;
+  font-family: var(--fuente-titulos);
+  font-weight: var(--peso-titulos);
+  font-size: clamp(1.15rem, 1rem + 0.8vw, 1.6rem);
+  text-transform: uppercase;
+}
+
+.torneo p {
+  margin: 0;
+}
+
+/* ---------- Movimiento (desactivado con prefers-reduced-motion) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .hero__logo {
+    animation: encender-neon 1.6s steps(1, end) 0.2s both;
+  }
+
+  .hero__titulo::before {
+    animation: respirar-halo 4s ease-in-out 1.8s infinite;
+  }
+
+  .marquesina__pista {
+    animation: desplazar 40s linear infinite;
+  }
+
+  .marquesina--inversa .marquesina__pista {
+    animation-name: desplazar-inversa;
+  }
+
+  .marquesina:hover .marquesina__pista {
+    animation-play-state: paused;
+  }
+}

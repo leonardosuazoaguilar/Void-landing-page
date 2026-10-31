@@ -16,6 +16,18 @@
     U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
+/* Itálica pesada para marquesinas, números y pósters (estilo de los pósters del Instagram) */
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/montserrat-latin-900-italic.woff2") format("woff2");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+    U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193,
+    U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 @font-face {
   font-family: "Inter";
   src: url("../fonts/inter-latin-var.woff2") format("woff2");
@@ -50,6 +62,10 @@
   /* Color: marca */
   --color-marca: #ffffff;
   --color-marca-brillo: rgba(255, 255, 255, 0.55);
+  --color-neon-halo: rgba(255, 255, 255, 0.18);
+  --sombra-neon: 0 0 0.35rem rgba(255, 255, 255, 0.9), 0 0 1.5rem rgba(255, 255, 255, 0.45),
+    0 0 4rem rgba(255, 255, 255, 0.2);
+  --textura-grano: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
   --color-acento: #ffffff;
   --color-acento-texto: #0a0a0b;
   --color-acento-hover: #d9d9de;
@@ -77,6 +93,7 @@
   --peso-texto: 400;
   --peso-fuerte: 600;
   --peso-titulos: 800;
+  --peso-poster: 900;
 
   /* Espaciado y forma */
   --espacio-1: clamp(0.5rem, 0.4rem + 0.4vw, 0.75rem);
